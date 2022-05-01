@@ -1,0 +1,35 @@
+<mat-card>
+  <mat-toolbar color="primary">Cadastro de tarefas</mat-toolbar>
+  <mat-card-content>
+    <form [formGroup]="form" class="form">
+      <mat-form-field class="mat-form">
+        <mat-label>Tarefa</mat-label>
+        <input matInput formControlName="nome" /> </mat-form-field
+      ><br />
+
+      <mat-form-field class="mat-form">
+        <mat-label>Enter your email</mat-label>
+        <input
+          matInput
+          placeholder="pat@example.com"
+          formControlName="email"
+          required
+        />
+      </mat-form-field>
+      <mat-form-field class="mat-form">
+        <mat-label>Categoria</mat-label>
+        <mat-select formControlName="categoria">
+          <mat-option value="estudo">Estudo</mat-option>
+          <mat-option value="trabalho">Trabalho</mat-option>
+          <mat-option value="casa">Casa</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Salvar</button>
+    <button mat-raised-button (click)="onCancel" >Cancelar</button>
+  </mat-card-actions>
+</mat-card>
+
+<app-listagem></app-listagem>
